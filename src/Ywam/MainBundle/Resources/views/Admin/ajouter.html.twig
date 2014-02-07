@@ -1,0 +1,10 @@
+{# empty Twig template #}
+{% extends "YwamMainBundle::layout.admin.html.twig" %}
+
+{% block MainContainner %}
+    <form method="post" {{ form_enctype(form) }}>
+        
+        {{ form_widget(form)}}
+        <input type="submit"/>
+    </form>
+{% endblock%} 

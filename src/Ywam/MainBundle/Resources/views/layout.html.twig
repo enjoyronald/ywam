@@ -1,0 +1,44 @@
+{% extends "::base.html.twig" %}
+
+        {% block title %}Acceuil{% endblock%}        
+        {% block stylesheets %}
+            <link href="{{ asset('bundles/ywammain/css/mainStyle.css')}}" rel="stylesheet" type="text/css"> 
+            <!--[if lt IE 9]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <![endif]-->
+            {% block caroussel_head_requirements %}{% endblock %}
+
+        {% endblock %}
+
+{% block body %}
+
+        <header>
+            logo assos
+            
+            <nav>
+            <ul>
+                <li><a href="{{ path('_ywam_public_index')}}"> Acceuil</a></li>
+                <li><a href="pages/gallerie.php"> News</a></li>
+                <li><a href="pages/valeurs.php"> About Us</a></li>
+                <li><a href="pages/contact.html">FAQ</a></li>
+            </ul>
+        </nav>
+        </header>
+
+        
+        <section class="MainContainner">
+           {% block MainConatainner %}{% endblock%}                      
+        </section>
+        
+        <footer>
+            <p>Copyright Ronald - Tous droits réservés
+            <a href="#">A Faire plus tard</a></p>
+        </footer>
+        {% block javascripts %}
+           {# <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+            <script type="text/javascript" src="{{ asset('js/bootstrap.js')}}"></script>#}
+        {% endblock %}
+ 
+{% endblock %}
+
+

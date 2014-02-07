@@ -1,0 +1,9 @@
+_ywam_public_index:
+    pattern:  /
+    defaults: { _controller: YwamMainBundle:Public:index }
+
+_ywam_public_afficher_article:
+    pattern:  /{id}/afficher
+    defaults: { _controller: YwamMainBundle:Public:afficher }
+    requirements:
+        id:    \d+

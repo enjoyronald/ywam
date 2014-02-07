@@ -1,0 +1,10 @@
+ywam_main:
+    resource: "@YwamMainBundle/Controller/"
+    type:     annotation
+    prefix:   /
+    
+    
+ck_finder:
+    resource: "@JonlilCKFinderBundle/Resources/config/routing/routing.yml"
+    prefix: /ckfinder
+

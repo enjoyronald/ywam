@@ -1,0 +1,19 @@
+_ywam_admin_index:
+    pattern:  /
+    defaults: { _controller: YwamMainBundle:Admin:index }
+    
+_ywam_admin_ajouter_article:
+    pattern:  /ajouter
+    defaults: { _controller: YwamMainBundle:Admin:ajouter }
+
+_ywam_admin_modifier_article:
+    pattern:  /{id}/modifier
+    defaults: { _controller: YwamMainBundle:Admin:modifier }
+    requirements: 
+        id: \d+
+
+_ywam_admin_supprimer_article:
+    pattern:  /{id}/supprimer
+    defaults: { _controller: YwamMainBundle:Admin:supprimer }
+    requirements:
+        id:  \d+

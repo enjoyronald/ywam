@@ -1,0 +1,11 @@
+{# empty Twig template #}
+{% extends "YwamMainBundle::layout.admin.html.twig" %}
+
+{% block MainContainner %}
+    {% for article in articles %}
+       
+   <h2>titre : {{article.titre}}</h2>
+   <br/>auteur: {{article.auteur}}
+   <br/>contenu: {{article.contenu|raw}}
+    {% endfor %}
+{% endblock%} 
