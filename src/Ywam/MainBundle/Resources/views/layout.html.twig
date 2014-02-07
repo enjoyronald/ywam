@@ -6,7 +6,7 @@
             <!--[if lt IE 9]>
                 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
             <![endif]-->
-            {% block caroussel_head_requirements %}{% endblock %}
+            {% block extends_stylesheets %}{% endblock %}
 
         {% endblock %}
 
@@ -24,6 +24,8 @@
             </ul>
         </nav>
         </header>
+            
+            {% block SlideshowBlock %}{% endblock %}
 
         
         <section class="MainContainner">

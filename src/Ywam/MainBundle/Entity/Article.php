@@ -62,7 +62,7 @@ class Article
      /**
      * @Assert\File(maxSize="6000000")
      */
-     private $file;
+     public $file;
     
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -182,6 +182,16 @@ class Article
     public function getAuteur()
     {
         return $this->auteur;
+    }
+    
+    /**
+     * Get path
+     * 
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
     }
 
     /**

@@ -20,6 +20,7 @@ class ArticleType extends AbstractType
             ->add('aPublier',       'checkbox',   array('required' => false))
             ->add('date', 'date')
             ->add('contenu', 'ckfinder')
+            ->add('file')
         ;
     }
     
