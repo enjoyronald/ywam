@@ -1,0 +1,29 @@
+{# empty Twig template #}
+{% extends "YwamMainBundle::layout.html.twig" %}
+
+
+{% block MainConatainner %}
+
+
+{# ----------------------------------------------Deuxime bout de page---------------------------------------------- #}
+<div class="row clearfix">
+    {# -----------------------------Element du centre----------------------------- #}
+	<div class="col-md-8 column">
+            <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title" contenteditable="false">{{article.titre}}</h3>
+                  </div>
+                  <div class="panel-body" contenteditable="false">
+                    {{article.contenu | raw}}
+                  </div>
+                  <div class="panel-footer" contenteditable="false">
+                   {{article.auteur}}
+                  </div>
+            </div>
+	</div>
+    {# -----------------------------Element de droite----------------------------- #}
+	<div class="col-md-4 column">
+	</div>
+</div>
+
+{% endblock %}

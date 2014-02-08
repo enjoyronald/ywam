@@ -27,8 +27,13 @@ class PublicController extends Controller
         ));
     }
     
-    public function afficherAction()
+    public function afficherAction($id)
     {
-        return new Response('afficher test');
+        $em = $this->getDoctrine()->getManager();
+        $article=$em->getRepository('YwamMainBundle:Article')->find($id);
+        
+        return $this->render('YwamMainBundle:Public:articleView.html.twig', array(
+            'article' => $article,
+        ));
     }
 }
