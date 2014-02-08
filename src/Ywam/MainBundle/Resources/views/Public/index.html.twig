@@ -4,14 +4,14 @@
 {% block extends_stylesheets %}
 <style type="text/css" media="screen">
 #slider1 {
-    width: 720px; /* important to be same as image width */
+    width: 960px; /* important to be same as image width */
     height: 300px; /* important to be same as image height */
     position: relative; /* important */
 	overflow: hidden; /* important */
 }
 
 #slider1Content {
-    width: 720px; /* important to be same as image width or wider */
+    width: 960px; /* important to be same as image width or wider */
     position: absolute;
 	top: 0;
 	margin-left: 0;
@@ -41,16 +41,23 @@
     font-size: 14px;
 }
 .left {
-	top: 0;
+	top: 200px;
     left: 0;
-	width: 110px !important;
-	height: 280px;
+	width: 960px !important;
+	height: 100px;
 }
 .right {
 	right: 0;
 	bottom: 0;
 	width: 90px !important;
 	height: 290px;
+}
+.down  {
+    right: 0;
+    bottom: 0;
+    width: 960px !important;
+    height: 100px;
+    
 }
 ul { list-style-type: none;}
 </style>
@@ -60,7 +67,7 @@ ul { list-style-type: none;}
 <script type="text/javascript">
     $(document).ready(function() {
         $('#slider1').s3Slider({
-            timeOut: 4000 
+            timeOut: 8000 
         });
     });
 </script>
@@ -68,24 +75,41 @@ ul { list-style-type: none;}
 {% endblock %}
 
 
-{% block SlideshowBlock %}
+
+{% block MainConatainner %}
+
+{#-----------------------------------Le Slide Schows-----------------------------------------------------------#}
+<div class="row clearfix">
     <div id="slider1">
         <ul id="slider1Content">
             
             {% for article in articles %}
             <li class="slider1Image" >
-                <a href=""><img src="{{ asset('uploads/documents')~"/"~article.id~"."~article.path }}" alt="1" width="720px" height="300px" /></a>
+                <a href=""><img src="{{ asset('uploads/documents')~"/"~article.id~"."~article.path }}" alt="1" width="960px" height="300px" /></a>
                 <span class="left"><strong>titre : {{article.titre}}</strong><br />auteur: {{article.auteur}}...</span>
             </li>
             {% endfor %}          
             <div class="clear slider1Image"></div>
             
         </ul>
-    </div>                           
-{% endblock %}
+    </div>    
+</div>
+
+{# ----------------------------------------------Deuxime bout de page---------------------------------------------- #}
+<div class="row clearfix">
+    {# -----------------------------Element du centre----------------------------- #}
+	<div class="col-md-8 column">
+            bla bla
+	</div>
+    {# -----------------------------Element de droite----------------------------- #}
+	<div class="col-md-4 column">
+            <div class="flex-video widescreen" style="margin: 0 auto;text-align:right;">
+                <iframe  allowfullscreen="" src="http://www.youtube.com/embed/6NbAAmDuv_8?feature=player_detailpage&autoplay=1&loop=1&mute=off" frameborder="0"></iframe>
+            </div>
+	</div>
+</div>
 
 
-{% block MainConatainner %}
 
 
 {% endblock%}
